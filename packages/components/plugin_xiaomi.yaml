@@ -1,0 +1,47 @@
+
+# This configuration file will define multiple Xiaomi devices including
+# - Roborock Vacuums
+# - Aquara Devices
+
+vacuum:
+  - platform: xiaomi_miio
+    name: Anton Vacuum
+    entity_id: anton_vacuum
+    host: 192.168.20.25
+    token: !secret anton
+
+xiaomi_aqara:
+  gateways:
+    - key: !secret aqarakey
+      host: 192.168.20.20
+
+
+# Vacuum Script
+
+script:
+  vacuum_hall_mat:
+        alias: "Vacuum Hall Mat"
+        sequence:
+          - service: vacuum.send_command
+            data:
+              entity_id: vacuum.anton_vacuum
+              command: app_zoned_clean
+              params: [[17435,25921,19235,27371,1]]
+              
+  vacuum_kitchen:
+        alias: "Vacuum Kitchen"
+        sequence:
+          - service: vacuum.send_command
+            data:
+              entity_id: vacuum.anton_vacuum
+              command: app_zoned_clean
+              params: [[17435,25921,19235,27371,1]]
+
+  vacuum_living_room:
+        alias: "Vacuum Living Room"
+        sequence:
+          - service: vacuum.send_command
+            data:
+              entity_id: vacuum.anton_vacuum
+              command: app_zoned_clean
+              params: [[19889,32594,23889,35594,1]]

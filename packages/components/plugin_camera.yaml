@@ -1,0 +1,6 @@
+camera:
+  - platform: mjpeg
+    mjpeg_url: http://192.168.20.32/tmpfs/auto.jpg
+    name: balcony_cam
+    username: admin
+    password: !secret camera1

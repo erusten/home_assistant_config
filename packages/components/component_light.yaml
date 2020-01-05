@@ -1,0 +1,37 @@
+light:  
+  # Platform
+  - platform: yeelight
+    devices:
+      192.168.20.29:
+        name: TV Strip
+  # Groups
+  - platform: group
+    name: Kitchen Lights
+    entities:
+      - light.hue_color_spot_1
+      - light.hue_color_spot_2
+      - light.hue_color_spot_3
+  - platform: group
+    name: Master Bedroom
+    entities:
+      - light.erik
+      - light.ina
+      - light.bedroom_ceiling_light
+
+  - platform: group
+    name: Guest Bedroom
+    entities:
+      - light.guest_room_ceiling_light
+
+  - platform: group
+    name: Home Office
+    entities:
+      - light.office_ceiling_light 
+
+  - platform: group
+    name: Livingroom Lights
+    entities:
+      - light.yeelight_strip_7811dce2d251
+      - light.floor_lamp
+      - light.hue_color_lamp_1
+      - light.hue_color_lamp_2

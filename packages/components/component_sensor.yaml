@@ -1,0 +1,15 @@
+sensor:
+  - platform: yr
+
+  - platform: qnap
+    host: 192.168.20.11
+    port: 81
+    username: admin
+    password: !secret qnap
+    verify_ssl: False
+    monitored_conditions:
+      - status
+      - cpu_usage
+      - memory_percent_used
+      - network_tx
+      - volume_percentage_used
