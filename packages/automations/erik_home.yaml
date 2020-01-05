@@ -1,0 +1,12 @@
+automation:
+- alias: Erik comes home
+  trigger:
+    platform: state
+    entity_id: device_tracker.erik_sin_iphone
+    to: 'home'
+  action:
+    service: tts.google_translate_say
+    entity_id: media_player.terrace
+    data:
+      message: 'Velkommen hjem Erik'
+      language: 'no'

@@ -1,0 +1,12 @@
+automation:
+- alias: Living Room motion is detected
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001e62f90
+    to: 'on'
+  action:
+    service: tts.google_translate_say
+    entity_id: media_player.living_room
+    data:
+      message: 'Happy new year'
+      language: en

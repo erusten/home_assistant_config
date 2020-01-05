@@ -1,0 +1,63 @@
+automation:
+- alias: Turn on bedside lamp on single click
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158d00023f4648
+      click_type: single
+  action:
+    service: light.turn_on
+    entity_id: light.ina
+
+- alias: Turn on hall light on single click
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158d00023f4648
+      click_type: single
+  action:
+    service: light.turn_on
+    entity_id: light.gateway_light_7811dce1e910
+
+- alias: Turn off bedside lamp on doubble click
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158d00023f4648
+      click_type: double
+  action:
+    service: light.turn_off
+    entity_id: light.ina
+    
+- alias: Turn off hall light on doubble click
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158d00023f4648
+      click_type: double
+  action:
+    service: light.turn_off
+    entity_id: light.gateway_light_7811dce1e910
+    
+- alias: Say goodnight on doubble click
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158d00023f4648
+      click_type: double
+  action:
+    service: tts.google_translate_say
+    entity_id: media_player.living_room
+    data:
+      message: 'God natt Ina'
+      language: 'no'
+
+
+
+
+
