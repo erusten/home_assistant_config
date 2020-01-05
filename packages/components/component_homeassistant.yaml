@@ -34,7 +34,8 @@ updater:
 
 # Discover some devices automatically
 discovery:
-
+  ignore:
+    - yeelight
 # Use MariaDB Add-on for Database
 #recorder:
 #  db_url: !secret mysql_uri

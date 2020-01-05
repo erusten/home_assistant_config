@@ -8,7 +8,7 @@ automation:
       click_type: single
   action:
     service: light.turn_on
-    entity_id: light.ina
+    entity_id: light.hue_ambiance_spot_3_2
 
 - alias: Turn on hall light on single click
   trigger:
